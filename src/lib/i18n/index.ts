@@ -2,7 +2,8 @@ import i18next from 'i18next';
 import resourcesToBackend from 'i18next-resources-to-backend';
 import LanguageDetector from 'i18next-browser-languagedetector';
 import type { i18n as i18nType } from 'i18next';
-import { writable } from 'svelte/store';
+import { type Writable, writable } from 'svelte/store';
+import { getContext } from 'svelte';
 
 const createI18nStore = (i18n: i18nType) => {
 	const i18nWritable = writable(i18n);
@@ -18,6 +19,10 @@ const createI18nStore = (i18n: i18nType) => {
 		i18nWritable.set(i18n);
 	});
 	return i18nWritable;
+};
+
+export const getI18nContext = () => {
+	return getContext<Writable<i18nType>>('i18n');
 };
 
 const createIsLoadingStore = (i18n: i18nType) => {
