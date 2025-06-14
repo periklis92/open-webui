@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { onMount, tick, getContext } from 'svelte';
+	import { onMount, tick } from 'svelte';
 
 	import Textarea from '$lib/components/common/Textarea.svelte';
 	import { toast } from 'svelte-sonner';
@@ -9,13 +9,14 @@
 	import AccessControlModal from '../common/AccessControlModal.svelte';
 	import { user } from '$lib/stores';
 	import { slugify } from '$lib/utils';
+	import { getI18nContext } from '$lib/i18n';
 
 	export let onSubmit: Function;
 	export let edit = false;
 	export let prompt = null;
 	export let clone = false;
 
-	const i18n = getContext('i18n');
+	const i18n = getI18nContext();
 
 	let loading = false;
 

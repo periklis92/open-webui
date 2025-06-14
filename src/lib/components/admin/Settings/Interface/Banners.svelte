@@ -3,8 +3,9 @@
 	import Tooltip from '$lib/components/common/Tooltip.svelte';
 	import EllipsisVertical from '$lib/components/icons/EllipsisVertical.svelte';
 	import Sortable from 'sortablejs';
-	import { getContext } from 'svelte';
-	const i18n = getContext('i18n');
+	import { getI18nContext } from '$lib/i18n';
+
+	const i18n = getI18nContext();
 
 	export let banners = [];
 

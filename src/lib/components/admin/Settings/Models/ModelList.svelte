@@ -1,12 +1,12 @@
 <script lang="ts">
 	import Sortable from 'sortablejs';
 
-	import { createEventDispatcher, getContext, onMount } from 'svelte';
-	const i18n = getContext('i18n');
-
 	import { models } from '$lib/stores';
 	import Tooltip from '$lib/components/common/Tooltip.svelte';
 	import EllipsisVertical from '$lib/components/icons/EllipsisVertical.svelte';
+	import { getI18nContext } from '$lib/i18n';
+
+	const i18n = getI18nContext();
 
 	export let modelIds = [];
 

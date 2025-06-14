@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { DropdownMenu } from 'bits-ui';
-	import { createEventDispatcher, getContext, onMount } from 'svelte';
+	import { createEventDispatcher } from 'svelte';
 
 	import { showSettings, activeUserIds, USAGE_POOL, mobile, showSidebar, user } from '$lib/stores';
 	import { fade, slide } from 'svelte/transition';
@@ -10,7 +10,9 @@
 	import DocumentArrowUp from '../icons/DocumentArrowUp.svelte';
 	import CloudArrowUp from '../icons/CloudArrowUp.svelte';
 
-	const i18n = getContext('i18n');
+	import { getI18nContext } from '$lib/i18n';
+
+	const i18n = getI18nContext();
 
 	export let show = false;
 	export let className = 'max-w-[170px]';

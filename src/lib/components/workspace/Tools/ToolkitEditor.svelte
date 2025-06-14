@@ -1,7 +1,9 @@
 <script>
-	import { getContext, onMount, tick } from 'svelte';
+	import { tick } from 'svelte';
 
-	const i18n = getContext('i18n');
+	import { getI18nContext } from '$lib/i18n';
+
+	const i18n = getI18nContext();
 
 	import CodeEditor from '$lib/components/common/CodeEditor.svelte';
 	import { goto } from '$app/navigation';

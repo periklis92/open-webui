@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { config, models, settings, showCallOverlay, TTSWorker } from '$lib/stores';
-	import { onMount, tick, getContext, onDestroy, createEventDispatcher } from 'svelte';
+	import { onMount, tick, onDestroy, createEventDispatcher } from 'svelte';
 
 	const dispatch = createEventDispatcher();
 
@@ -13,8 +13,9 @@
 	import Tooltip from '$lib/components/common/Tooltip.svelte';
 	import VideoInputMenu from './CallOverlay/VideoInputMenu.svelte';
 	import { KokoroWorker } from '$lib/workers/KokoroWorker';
+	import { getI18nContext } from '$lib/i18n';
 
-	const i18n = getContext('i18n');
+	const i18n = getI18nContext();
 
 	export let eventTarget: EventTarget;
 	export let submitPrompt: Function;

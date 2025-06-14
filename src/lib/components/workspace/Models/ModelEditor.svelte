@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { onMount, getContext, tick } from 'svelte';
+	import { onMount, tick } from 'svelte';
 	import { models, tools, functions, knowledge as knowledgeCollections, user } from '$lib/stores';
 
 	import AdvancedParams from '$lib/components/chat/Settings/Advanced/AdvancedParams.svelte';
@@ -17,7 +17,9 @@
 	import { stringify } from 'postcss';
 	import { toast } from 'svelte-sonner';
 
-	const i18n = getContext('i18n');
+	import { getI18nContext } from '$lib/i18n';
+
+	const i18n = getI18nContext();
 
 	export let onSubmit: Function;
 	export let onBack: null | Function = null;

@@ -3,6 +3,7 @@
 	import { toast } from 'svelte-sonner';
 
 	import { updateMemoryById } from '$lib/apis/memories';
+	import { getI18nContext } from '$lib/i18n';
 
 	import Modal from '$lib/components/common/Modal.svelte';
 
@@ -11,7 +12,7 @@
 	export let show;
 	export let memory = {};
 
-	const i18n = getContext('i18n');
+	const i18n = getI18nContext();
 
 	let loading = false;
 	let content = '';

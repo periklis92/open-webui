@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { marked } from 'marked';
 
-	import { getContext, tick } from 'svelte';
 	import dayjs from '$lib/dayjs';
 
 	import { mobile, settings, user } from '$lib/stores';
@@ -13,8 +12,9 @@
 	import ModelItemMenu from './ModelItemMenu.svelte';
 	import EllipsisHorizontal from '$lib/components/icons/EllipsisHorizontal.svelte';
 	import { toast } from 'svelte-sonner';
+	import { getI18nContext } from '$lib/i18n';
 
-	const i18n = getContext('i18n');
+	const i18n = getI18nContext();
 
 	export let selectedModelIdx: number = -1;
 	export let item: any = {};

@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Checkbox from '$lib/components/common/Checkbox.svelte';
-	import { getContext, onMount } from 'svelte';
+	import { onMount } from 'svelte';
 
 	export let tools = [];
 
@@ -8,7 +8,9 @@
 
 	export let selectedToolIds = [];
 
-	const i18n = getContext('i18n');
+	import { getI18nContext } from '$lib/i18n';
+
+	const i18n = getI18nContext();
 
 	onMount(() => {
 		_tools = tools.reduce((acc, tool) => {

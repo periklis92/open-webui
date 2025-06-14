@@ -1,11 +1,12 @@
 <script lang="ts">
 	import { toast } from 'svelte-sonner';
 
-	import { createEventDispatcher, onMount, getContext } from 'svelte';
+	import { createEventDispatcher, onMount } from 'svelte';
 	import { config, models } from '$lib/stores';
 	import Tags from '$lib/components/common/Tags.svelte';
+	import { getI18nContext } from '$lib/i18n';
 
-	const i18n = getContext('i18n');
+	const i18n = getI18nContext();
 
 	const dispatch = createEventDispatcher();
 

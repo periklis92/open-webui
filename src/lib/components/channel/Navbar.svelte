@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { getContext } from 'svelte';
 	import { toast } from 'svelte-sonner';
 
 	import { showArchivedChats, showSidebar, user } from '$lib/stores';
@@ -10,8 +9,9 @@
 	import UserMenu from '$lib/components/layout/Sidebar/UserMenu.svelte';
 	import MenuLines from '../icons/MenuLines.svelte';
 	import PencilSquare from '../icons/PencilSquare.svelte';
+	import { getI18nContext } from '$lib/i18n';
 
-	const i18n = getContext('i18n');
+	const i18n = getI18nContext();
 
 	export let channel;
 </script>

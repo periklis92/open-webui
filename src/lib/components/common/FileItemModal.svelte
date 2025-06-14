@@ -2,8 +2,9 @@
 	import { getContext, onMount } from 'svelte';
 	import { formatFileSize, getLineCount } from '$lib/utils';
 	import { WEBUI_API_BASE_URL } from '$lib/constants';
+	import { getI18nContext } from '$lib/i18n';
 
-	const i18n = getContext('i18n');
+	const i18n = getI18nContext();
 
 	import Modal from './Modal.svelte';
 	import XMark from '../icons/XMark.svelte';

@@ -1,8 +1,5 @@
 <script>
 	import { toast } from 'svelte-sonner';
-	import { getContext } from 'svelte';
-
-	const i18n = getContext('i18n');
 
 	import { deleteGroupById, updateGroupById } from '$lib/apis/groups';
 
@@ -10,6 +7,10 @@
 	import User from '$lib/components/icons/User.svelte';
 	import UserCircleSolid from '$lib/components/icons/UserCircleSolid.svelte';
 	import GroupModal from './EditGroupModal.svelte';
+
+	import { getI18nContext } from '$lib/i18n';
+
+	const i18n = getI18nContext();
 
 	export let users = [];
 	export let group = {

@@ -9,8 +9,9 @@
 	import Eye from '$lib/components/icons/Eye.svelte';
 	import EyeSlash from '$lib/components/icons/EyeSlash.svelte';
 	import { settings } from '$lib/stores';
+	import { getI18nContext } from '$lib/i18n';
 
-	const i18n = getContext('i18n');
+	const i18n = getI18nContext();
 
 	export let show = false;
 	export let model;

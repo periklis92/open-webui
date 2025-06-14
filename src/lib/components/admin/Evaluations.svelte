@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import { getContext, tick, onMount } from 'svelte';
 	import { goto } from '$app/navigation';
 	import { page } from '$app/stores';
@@ -7,8 +7,9 @@
 	import Feedbacks from './Evaluations/Feedbacks.svelte';
 
 	import { getAllFeedbacks } from '$lib/apis/evaluations';
+	import { getI18nContext } from '$lib/i18n';
 
-	const i18n = getContext('i18n');
+	const i18n = getI18nContext();
 
 	let selectedTab;
 	$: {

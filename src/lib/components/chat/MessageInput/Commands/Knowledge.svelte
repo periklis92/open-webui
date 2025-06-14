@@ -6,11 +6,12 @@
 	import relativeTime from 'dayjs/plugin/relativeTime';
 	dayjs.extend(relativeTime);
 
-	import { createEventDispatcher, tick, getContext, onMount } from 'svelte';
+	import { createEventDispatcher, tick, onMount } from 'svelte';
 	import { removeLastWordFromString, isValidHttpUrl } from '$lib/utils';
 	import { knowledge } from '$lib/stores';
+	import { getI18nContext } from '$lib/i18n';
 
-	const i18n = getContext('i18n');
+	const i18n = getI18nContext();
 
 	export let prompt = '';
 	export let command = '';

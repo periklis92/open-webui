@@ -3,13 +3,14 @@
 	const { saveAs } = fileSaver;
 
 	import { toast } from 'svelte-sonner';
-	import { getContext } from 'svelte';
 	import { archiveChatById, getAllArchivedChats, getArchivedChatList } from '$lib/apis/chats';
 
 	import ChatsModal from './ChatsModal.svelte';
 	import UnarchiveAllConfirmDialog from '$lib/components/common/ConfirmDialog.svelte';
 
-	const i18n = getContext('i18n');
+	import { getI18nContext } from '$lib/i18n';
+
+	const i18n = getI18nContext();
 
 	export let show = false;
 	export let onUpdate = () => {};

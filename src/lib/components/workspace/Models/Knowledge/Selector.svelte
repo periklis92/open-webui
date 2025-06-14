@@ -2,12 +2,14 @@
 	import Fuse from 'fuse.js';
 
 	import { DropdownMenu } from 'bits-ui';
-	import { onMount, getContext, createEventDispatcher } from 'svelte';
+	import { onMount, createEventDispatcher } from 'svelte';
 	import { flyAndScale } from '$lib/utils/transitions';
 	import { knowledge } from '$lib/stores';
 	import Dropdown from '$lib/components/common/Dropdown.svelte';
 
-	const i18n = getContext('i18n');
+	import { getI18nContext } from '$lib/i18n';
+
+	const i18n = getI18nContext();
 	const dispatch = createEventDispatcher();
 
 	export let onClose: Function = () => {};

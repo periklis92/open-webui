@@ -4,7 +4,7 @@
 	const { saveAs } = fileSaver;
 
 	import { goto } from '$app/navigation';
-	import { onMount, getContext } from 'svelte';
+	import { onMount } from 'svelte';
 	import { WEBUI_NAME, config, prompts as _prompts, user } from '$lib/stores';
 
 	import {
@@ -25,7 +25,9 @@
 	import { capitalizeFirstLetter, slugify } from '$lib/utils';
 	import XMark from '../icons/XMark.svelte';
 
-	const i18n = getContext('i18n');
+	import { getI18nContext } from '$lib/i18n';
+
+	const i18n = getI18nContext();
 	let promptsImportInputElement: HTMLInputElement;
 	let loaded = false;
 

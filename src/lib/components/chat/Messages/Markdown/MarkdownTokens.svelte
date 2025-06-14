@@ -1,7 +1,5 @@
 <script lang="ts">
 	import DOMPurify from 'dompurify';
-	import { onMount, getContext } from 'svelte';
-	const i18n = getContext('i18n');
 
 	import fileSaver from 'file-saver';
 	const { saveAs } = fileSaver;
@@ -22,6 +20,9 @@
 	import Source from './Source.svelte';
 	import { settings } from '$lib/stores';
 	import HtmlToken from './HTMLToken.svelte';
+	import { getI18nContext } from '$lib/i18n';
+
+	const i18n = getI18nContext();
 
 	export let id: string;
 	export let tokens: Token[];

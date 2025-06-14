@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { onMount, getContext } from 'svelte';
+	import { onMount } from 'svelte';
 	import {
 		WEBUI_NAME,
 		showSidebar,
@@ -16,7 +16,9 @@
 
 	import MenuLines from '$lib/components/icons/MenuLines.svelte';
 
-	const i18n = getContext('i18n');
+	import { getI18nContext } from '$lib/i18n';
+
+	const i18n = getI18nContext();
 
 	let loaded = false;
 

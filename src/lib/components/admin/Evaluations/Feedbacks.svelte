@@ -1,14 +1,15 @@
 <script lang="ts">
 	import { toast } from 'svelte-sonner';
 	import fileSaver from 'file-saver';
-	const { saveAs } = fileSaver;
 
 	import dayjs from 'dayjs';
 	import relativeTime from 'dayjs/plugin/relativeTime';
+	import { getI18nContext } from '$lib/i18n';
+
+	const { saveAs } = fileSaver;
 	dayjs.extend(relativeTime);
 
-	import { onMount, getContext } from 'svelte';
-	const i18n = getContext('i18n');
+	const i18n = getI18nContext();
 
 	import { deleteFeedbackById, exportAllFeedbacks, getAllFeedbacks } from '$lib/apis/evaluations';
 

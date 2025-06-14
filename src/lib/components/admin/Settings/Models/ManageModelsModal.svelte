@@ -1,8 +1,7 @@
 <script>
 	import { toast } from 'svelte-sonner';
 
-	import { createEventDispatcher, getContext, onMount } from 'svelte';
-	const i18n = getContext('i18n');
+	import { createEventDispatcher, onMount } from 'svelte';
 	const dispatch = createEventDispatcher();
 
 	import { user } from '$lib/stores';
@@ -12,6 +11,9 @@
 	import { getOllamaConfig } from '$lib/apis/ollama';
 	import Spinner from '$lib/components/common/Spinner.svelte';
 	import ManageMultipleOllama from './Manage/ManageMultipleOllama.svelte';
+	import { getI18nContext } from '$lib/i18n';
+
+	const i18n = getI18nContext();
 
 	export let show = false;
 

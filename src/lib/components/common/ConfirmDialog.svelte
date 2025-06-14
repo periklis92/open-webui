@@ -1,15 +1,16 @@
 <script lang="ts">
 	import DOMPurify from 'dompurify';
 
-	import { onMount, getContext, createEventDispatcher, onDestroy } from 'svelte';
+	import { onMount, createEventDispatcher, onDestroy } from 'svelte';
 	import * as FocusTrap from 'focus-trap';
-
-	const i18n = getContext('i18n');
 	const dispatch = createEventDispatcher();
 
 	import { fade } from 'svelte/transition';
 	import { flyAndScale } from '$lib/utils/transitions';
 	import { marked } from 'marked';
+	import { getI18nContext } from '$lib/i18n';
+
+	const i18n = getI18nContext();
 
 	export let title = '';
 	export let message = '';

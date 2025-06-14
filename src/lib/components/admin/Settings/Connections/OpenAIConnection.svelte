@@ -1,7 +1,4 @@
 <script lang="ts">
-	import { getContext, tick } from 'svelte';
-	const i18n = getContext('i18n');
-
 	import Tooltip from '$lib/components/common/Tooltip.svelte';
 	import SensitiveInput from '$lib/components/common/SensitiveInput.svelte';
 	import Cog6 from '$lib/components/icons/Cog6.svelte';
@@ -9,6 +6,9 @@
 	import ConfirmDialog from '$lib/components/common/ConfirmDialog.svelte';
 
 	import { connect } from 'socket.io-client';
+	import { getI18nContext } from '$lib/i18n';
+
+	const i18n = getI18nContext();
 
 	export let onDelete = () => {};
 	export let onSubmit = () => {};

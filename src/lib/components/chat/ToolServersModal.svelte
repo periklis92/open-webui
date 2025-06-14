@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { getContext, onMount } from 'svelte';
 	import { models, config, toolServers, tools } from '$lib/stores';
 
 	import { toast } from 'svelte-sonner';
@@ -9,6 +8,9 @@
 	import Modal from '../common/Modal.svelte';
 	import Link from '../icons/Link.svelte';
 	import Collapsible from '../common/Collapsible.svelte';
+	import { getI18nContext } from '$lib/i18n';
+
+	const i18n = getI18nContext();
 
 	export let show = false;
 	export let selectedToolIds = [];
@@ -16,8 +18,6 @@
 	let selectedTools = [];
 
 	$: selectedTools = ($tools ?? []).filter((tool) => selectedToolIds.includes(tool.id));
-
-	const i18n = getContext('i18n');
 </script>
 
 <Modal bind:show size="md">

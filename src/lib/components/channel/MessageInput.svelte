@@ -2,9 +2,7 @@
 	import { toast } from 'svelte-sonner';
 	import { v4 as uuidv4 } from 'uuid';
 
-	import { tick, getContext, onMount, onDestroy } from 'svelte';
-
-	const i18n = getContext('i18n');
+	import { tick, onMount, onDestroy } from 'svelte';
 
 	import { config, mobile, settings, socket } from '$lib/stores';
 	import { blobToFile, compressImage } from '$lib/utils';
@@ -18,6 +16,9 @@
 	import FileItem from '../common/FileItem.svelte';
 	import Image from '../common/Image.svelte';
 	import FilesOverlay from '../chat/MessageInput/FilesOverlay.svelte';
+	import { getI18nContext } from '$lib/i18n';
+
+	const i18n = getI18nContext();
 
 	export let placeholder = $i18n.t('Send a Message');
 	export let transparentBackground = false;

@@ -4,7 +4,7 @@
 	const { saveAs } = fileSaver;
 
 	import { WEBUI_NAME, config, functions, models, settings } from '$lib/stores';
-	import { onMount, getContext, tick } from 'svelte';
+	import { onMount, tick } from 'svelte';
 
 	import { goto } from '$app/navigation';
 	import {
@@ -18,7 +18,6 @@
 		toggleGlobalById
 	} from '$lib/apis/functions';
 
-	import ArrowDownTray from '../icons/ArrowDownTray.svelte';
 	import Tooltip from '../common/Tooltip.svelte';
 	import ConfirmDialog from '../common/ConfirmDialog.svelte';
 	import { getModels } from '$lib/apis';
@@ -36,8 +35,9 @@
 	import XMark from '../icons/XMark.svelte';
 	import AddFunctionMenu from './Functions/AddFunctionMenu.svelte';
 	import ImportModal from '../ImportModal.svelte';
+	import { getI18nContext } from '$lib/i18n';
 
-	const i18n = getContext('i18n');
+	const i18n = getI18nContext();
 
 	let shiftKey = false;
 

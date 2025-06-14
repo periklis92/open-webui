@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { getContext, createEventDispatcher, onMount } from 'svelte';
 	import { createNewChannel, deleteChannelById } from '$lib/apis/channels';
 
 	import Modal from '$lib/components/common/Modal.svelte';
@@ -9,7 +8,10 @@
 	import { toast } from 'svelte-sonner';
 	import { page } from '$app/stores';
 	import { goto } from '$app/navigation';
-	const i18n = getContext('i18n');
+
+	import { getI18nContext } from '$lib/i18n';
+
+	const i18n = getI18nContext();
 
 	export let show = false;
 	export let onSubmit: Function = () => {};

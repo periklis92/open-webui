@@ -4,8 +4,7 @@
 	import DOMPurify from 'dompurify';
 	import { marked } from 'marked';
 
-	import { getContext, tick } from 'svelte';
-	const i18n = getContext('i18n');
+	import { tick } from 'svelte';
 
 	import { chatCompletion } from '$lib/apis/openai';
 
@@ -13,6 +12,9 @@
 	import LightBulb from '$lib/components/icons/LightBulb.svelte';
 	import Markdown from '../Messages/Markdown.svelte';
 	import Skeleton from '../Messages/Skeleton.svelte';
+	import { getI18nContext } from '$lib/i18n';
+
+	const i18n = getI18nContext();
 
 	export let id = '';
 	export let model = null;

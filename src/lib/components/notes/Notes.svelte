@@ -28,7 +28,7 @@
 	$: loadLocale($i18n.languages);
 
 	import { goto } from '$app/navigation';
-	import { onMount, getContext, onDestroy } from 'svelte';
+	import { onMount, onDestroy } from 'svelte';
 	import { WEBUI_NAME, config, prompts as _prompts, user } from '$lib/stores';
 
 	import { createNewNote, deleteNoteById, getNotes } from '$lib/apis/notes';
@@ -45,7 +45,9 @@
 	import FilesOverlay from '../chat/MessageInput/FilesOverlay.svelte';
 	import { marked } from 'marked';
 
-	const i18n = getContext('i18n');
+	import { getI18nContext } from '$lib/i18n';
+
+	const i18n = getI18nContext();
 	let loaded = false;
 
 	let importFiles = '';

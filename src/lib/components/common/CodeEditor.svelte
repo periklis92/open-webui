@@ -11,7 +11,7 @@
 
 	import { oneDark } from '@codemirror/theme-one-dark';
 
-	import { onMount, createEventDispatcher, getContext, tick, onDestroy } from 'svelte';
+	import { onMount, createEventDispatcher, tick, onDestroy } from 'svelte';
 
 	import PyodideWorker from '$lib/workers/pyodide.worker?worker';
 
@@ -20,7 +20,10 @@
 	import { user } from '$lib/stores';
 
 	const dispatch = createEventDispatcher();
-	const i18n = getContext('i18n');
+
+	import { getI18nContext } from '$lib/i18n';
+
+	const i18n = getI18nContext();
 
 	export let boilerplate = '';
 	export let value = '';

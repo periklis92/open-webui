@@ -1,7 +1,6 @@
 <script lang="ts">
-	import { createEventDispatcher, getContext } from 'svelte';
+	import { createEventDispatcher } from 'svelte';
 	const dispatch = createEventDispatcher();
-	const i18n = getContext('i18n');
 
 	import XMark from '$lib/components/icons/XMark.svelte';
 	import AdvancedParams from '../Settings/Advanced/AdvancedParams.svelte';
@@ -10,6 +9,10 @@
 	import Collapsible from '$lib/components/common/Collapsible.svelte';
 
 	import { user } from '$lib/stores';
+	import { getI18nContext } from '$lib/i18n';
+
+	const i18n = getI18nContext();
+
 	export let models = [];
 	export let chatFiles = [];
 	export let params = {};

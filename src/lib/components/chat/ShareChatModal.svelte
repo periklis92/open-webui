@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { getContext, onMount } from 'svelte';
 	import { models, config } from '$lib/stores';
 
 	import { toast } from 'svelte-sonner';
@@ -8,12 +7,14 @@
 
 	import Modal from '../common/Modal.svelte';
 	import Link from '../icons/Link.svelte';
+	import { getI18nContext } from '$lib/i18n';
 
 	export let chatId;
 
 	let chat = null;
 	let shareUrl = null;
-	const i18n = getContext('i18n');
+
+	const i18n = getI18nContext();
 
 	const shareLocalChat = async () => {
 		const _chat = chat;
